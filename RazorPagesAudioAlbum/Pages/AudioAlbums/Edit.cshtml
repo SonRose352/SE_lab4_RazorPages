@@ -1,0 +1,65 @@
+﻿@page "{id:int?}"
+@model RazorPagesAudioAlbum.Pages.AudioAlbums.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AudioAlbum</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="AudioAlbum.Id" />
+            <div class="form-group">
+                <label asp-for="AudioAlbum.Title" class="control-label"></label>
+                <input asp-for="AudioAlbum.Title" class="form-control" />
+                <span asp-validation-for="AudioAlbum.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AudioAlbum.ReleaseDate" class="control-label"></label>
+                <input asp-for="AudioAlbum.ReleaseDate" class="form-control" />
+                <span asp-validation-for="AudioAlbum.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AudioAlbum.Genre" class="control-label"></label>
+                <input asp-for="AudioAlbum.Genre" class="form-control" />
+                <span asp-validation-for="AudioAlbum.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AudioAlbum.Executor" class="control-label"></label>
+                <input asp-for="AudioAlbum.Executor" class="form-control" />
+                <span asp-validation-for="AudioAlbum.Executor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AudioAlbum.NumberOfTracks" class="control-label"></label>
+                <input asp-for="AudioAlbum.NumberOfTracks" class="form-control" />
+                <span asp-validation-for="AudioAlbum.NumberOfTracks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AudioAlbum.Duration" class="control-label"></label>
+                <input asp-for="AudioAlbum.Duration" class="form-control" />
+                <span asp-validation-for="AudioAlbum.Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AudioAlbum.Rating" class="control-label"></label>
+                <input asp-for="AudioAlbum.Rating" class="form-control" />
+                <span asp-validation-for="AudioAlbum.Rating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
